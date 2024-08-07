@@ -80,6 +80,12 @@ const foodData = {
       igLink: 'https://www.instagram.com/reel/C7MHaU0PnQd',
       img: '',
       mapLink: '!1m18!1m12!1m3!1d344.8783835385119!2d120.65885463720541!3d24.15217233124869!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34693d7ec101dcfb%3A0x94292c0d6e83fa4d!2z54GjZ3XDoW7mv4Pmua_purU!5e0!3m2!1szh-TW!2stw!4v1721983619012!5m2!1szh-TW!2stw'
+    },
+    {
+      title: '東京醬油拉麵超極丸',
+      igLink: 'https://www.instagram.com/p/B4XR6BADwFy',
+      img: '',
+      mapLink: '!1m18!1m12!1m3!1d3640.4720685896896!2d120.65798501080101!3d24.155171673026658!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34693d3b7bc9c4dd%3A0x7dbced92425c0187!2z5p2x5Lqs6Yas5rK55ouJ6bq16LaF5qW15Li4!5e0!3m2!1szh-TW!2stw!4v1723043137068!5m2!1szh-TW!2stw'
     }
   ],
   'riceBowl': [
