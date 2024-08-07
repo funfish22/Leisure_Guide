@@ -4,7 +4,7 @@ import React from 'react';
 import { Breadcrumb, Layout, theme } from 'antd';
 const { Content } = Layout;
 
-const App = () => {
+const Travel = () => {
   const {
     token: { colorBgContainer, borderRadiusLG },
   } = theme.useToken();
@@ -19,10 +19,10 @@ const App = () => {
           borderRadius: borderRadiusLG,
         }}
       >
-        首頁內容
+        旅遊內容
       </Content>
     </Layout>
   );
 };
-export default App;
+export default Travel;
 
