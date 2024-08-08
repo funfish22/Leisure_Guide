@@ -18,9 +18,8 @@ const FoodPageComponent = ({ searchParams, items, foodData }) => {
     if (JSON.stringify(searchParams) !== "{}") {
       setFoodType(foodData[searchParams.type]);
     } else {
-      setFoodType(foodData[items[0].key]);
-      setActiveMenu(items[0].key);
-      setActiveTab("0");
+      setFoodType(foodData[items[Number(activeTab)].key]);
+      setActiveMenu(items[Number(activeTab)].key);
     }
   }, []);
 

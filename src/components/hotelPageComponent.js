@@ -5,6 +5,7 @@ import { Menu, Layout, theme, Button, Flex, List, Tabs } from "antd";
 const { Sider, Content } = Layout;
 
 const HotelPageComponent = ({ searchParams, items, hotelData }) => {
+  const router = useRouter();
   const {
     token: { colorBgContainer, borderRadiusLG },
   } = theme.useToken();
@@ -13,6 +14,27 @@ const HotelPageComponent = ({ searchParams, items, hotelData }) => {
   const [mainHotel, setMainHotel] = useState([]);
   const [activeMenu, setActiveMenu] = useState("Taichung");
   const [activeTab, setActiveTab] = useState("0");
+
+  useEffect(() => {
+    if (JSON.stringify(searchParams) !== "{}") {
+      setHotelType(hotelData[searchParams.type]);
+    } else {
+      setHotelType(hotelData[activeMenu]);
+      setActiveMenu(activeMenu);
+    }
+  }, []);
+
+  useEffect(() => {
+    if (JSON.stringify(searchParams) !== "{}") {
+      setActiveMenu(searchParams.type);
+    }
+  }, [searchParams]);
+
+  useEffect(() => {
+    if (hotelType && hotelType.length > 0) {
+      setMainHotel([hotelType[0]]);
+    }
+  }, [hotelType]);
 
   const handleMenu = ({ item, key, keyPath, domEvent }) => {
     setHotelType(hotelData[key]);
@@ -23,6 +45,7 @@ const HotelPageComponent = ({ searchParams, items, hotelData }) => {
 
   const handleChangeHotel = (index) => {
     setMainHotel([hotelType[index]]);
+    setActiveTab(String(index));
   };
   return (
     <Layout>
