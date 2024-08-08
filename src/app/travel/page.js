@@ -1,7 +1,7 @@
-'use client'
-import React from 'react';
+"use client";
+import React from "react";
 
-import { Breadcrumb, Layout, theme } from 'antd';
+import { Breadcrumb, Layout, theme } from "antd";
 const { Content } = Layout;
 
 const Travel = () => {
@@ -13,7 +13,7 @@ const Travel = () => {
       <Content
         style={{
           padding: 24,
-          margin: '16px 0',
+          margin: "16px 0",
           minHeight: 280,
           background: colorBgContainer,
           borderRadius: borderRadiusLG,
@@ -25,4 +25,3 @@ const Travel = () => {
   );
 };
 export default Travel;
-
