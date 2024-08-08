@@ -12,10 +12,12 @@ const HotelPageComponent = ({searchParams, items, hotelData}) => {
       const [hotelType, setHotelType] = useState([]);
       const [mainHotel, setMainHotel] = useState([]);
       const [activeMenu, setActiveMenu] = useState('Taichung')
+      const [activeTab, setActiveTab] = useState('0')
 
       const handleMenu = ({ item, key, keyPath, domEvent }) => {
         setHotelType(hotelData[key])
         setMainHotel([])
+        setActiveTab('0')
         router.push(`/hotel?type=${key}`)
       }
 
@@ -48,7 +50,7 @@ const HotelPageComponent = ({searchParams, items, hotelData}) => {
       >
         {hotelType && (
           <Tabs
-            defaultActiveKey="1"
+            activeKey={activeTab}
             tabPosition={'top'}
             style={{
                 minHeight: 'calc(100vh - 144px)',

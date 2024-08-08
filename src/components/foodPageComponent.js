@@ -12,6 +12,7 @@ const FoodPageComponent = ({searchParams, items, foodData}) => {
   const [foodType, setFoodType] = useState([]);
   const [mainFood, setMainFood] = useState([]);
   const [activeMenu, setActiveMenu] = useState()
+  const [activeTab, setActiveTab] = useState('0')
 
   useEffect(() => {
     if(JSON.stringify(searchParams) !== '{}') {
@@ -19,6 +20,7 @@ const FoodPageComponent = ({searchParams, items, foodData}) => {
     } else {
       setFoodType(foodData[items[0].key])
       setActiveMenu(items[0].key)
+      setActiveTab('0')
     }
   }, [])
 
@@ -37,11 +39,13 @@ const FoodPageComponent = ({searchParams, items, foodData}) => {
   const handleMenu = ({ item, key, keyPath, domEvent }) => {
     setFoodType(foodData[key])
     setMainFood([])
+    setActiveTab('0')
     router.push(`/food?type=${key}`)
   }
 
   const handleChangeFood = (index) => {
     setMainFood([foodType[index]])
+    setActiveTab(String(index))
   }
 
   return (
@@ -70,7 +74,8 @@ const FoodPageComponent = ({searchParams, items, foodData}) => {
       >
         {foodType && (
           <Tabs
-          defaultActiveKey="1"
+          // defaultActiveKey="1"
+          activeKey={activeTab}
           tabPosition={'top'}
           style={{
             minHeight: 'calc(100vh - 144px)',
